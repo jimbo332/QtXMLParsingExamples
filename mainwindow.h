@@ -22,7 +22,6 @@ public:
     void createConnections();
 
 public slots:
-    void prependXmlExtChecked(bool checked);
     void parseFileBtnClicked(bool checked = false);
 private:
     Ui::MainWindow *ui;

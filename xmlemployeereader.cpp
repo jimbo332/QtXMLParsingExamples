@@ -33,6 +33,8 @@ void XmlEmployeeReader::read()
         m_xml.raiseError();
         qDebug() << "Error occured!";
     }
+
+    qDebug() << "At the end of the read() funcion\n";
 }
 
 void XmlEmployeeReader::setFileName(const QString &fileName)
@@ -45,17 +47,19 @@ const QString &XmlEmployeeReader::getFileName()
     return m_fileName;
 }
 
-void XmlEmployeeReader::readEmployees(QTreeWidgetItem *treeWidget)
+void XmlEmployeeReader::readEmployees(QTreeWidgetItem *treeWidgetItem)
 {
     if(!m_xml.isStartElement() || !(m_xml.name() != "employees"))
     {
         return;
     }
 
+    qDebug() << "Reading employees\n";
     while(m_xml.readNextStartElement())
     {
         if(m_xml.name() == "employee")
         {
+            qDebug() << "Reading employee!!!\n";
             readEmployee();
         }
         else
@@ -65,7 +69,7 @@ void XmlEmployeeReader::readEmployees(QTreeWidgetItem *treeWidget)
     }
 }
 
-void XmlEmployeeReader::readEmployee(QTreeWidgetItem *treeWidget)
+void XmlEmployeeReader::readEmployee(QTreeWidgetItem *treeWidgetItem)
 {
     QString firstname;
     QString lastname;
@@ -75,6 +79,7 @@ void XmlEmployeeReader::readEmployee(QTreeWidgetItem *treeWidget)
     QString login;
     QString officelocation;
 
+    qDebug() << "Hi there\n";
     while(m_xml.readNextStartElement())
     {
         if(m_xml.name() == "firstname")
@@ -116,9 +121,16 @@ void XmlEmployeeReader::readEmployee(QTreeWidgetItem *treeWidget)
         info.push_back(login);
         info.push_back(officelocation);
 
-        QTreeWidgetItem *item = new QTreeWidgetItem(info);
-        m_pTreeWidget->addTopLevelItem(item);
-        m_pTreeWidget->show();
+        qDebug() << "HERE!" << '\n';
+        qDebug() << "Size: " << info.size() << "\n";
+        for(int i = 0; i < info.size(); i++)
+        {
+            qDebug() << info[i] << '\n';
+        }
+
+//        QTreeWidgetItem *item = new QTreeWidgetItem(info);
+//        m_pTreeWidget->addTopLevelItem(item);
+//        m_pTreeWidget->show();
     }
 }
 

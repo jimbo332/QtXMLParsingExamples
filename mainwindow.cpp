@@ -34,11 +34,6 @@ void MainWindow::createConnections()
 
 }
 
-void MainWindow::prependXmlExtChecked(bool checked)
-{
-
-}
-
 void MainWindow::parseFileBtnClicked(bool checked)
 {
     QString fileName = m_pFileNameEdit->text();

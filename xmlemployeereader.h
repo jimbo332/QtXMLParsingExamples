@@ -14,8 +14,8 @@ public:
     const QString& getFileName();
 
 private:
-    void readEmployees(QTreeWidgetItem* treeWidget = Q_NULLPTR);
-    void readEmployee(QTreeWidgetItem* treeWidget = Q_NULLPTR);
+    void readEmployees(QTreeWidgetItem* treeWidgetItem = Q_NULLPTR);
+    void readEmployee(QTreeWidgetItem* treeWidgetItem = Q_NULLPTR);
 
     QTreeWidgetItem* createChildItem(QTreeWidgetItem *item = Q_NULLPTR);
 
