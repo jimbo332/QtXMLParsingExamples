@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    xmlemployeereader.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    xmlemployeereader.h
 
 FORMS += \
         mainwindow.ui

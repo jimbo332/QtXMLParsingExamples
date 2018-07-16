@@ -1,0 +1,25 @@
+<employees>
+    <employee>
+        <firstname> 
+            "Vahag"
+        </firstname>
+        <lastname>
+            "Bejanyan"
+        </lastname>
+        <age>
+            "20"
+        </age>
+        <position>
+            "Intern"
+        </position>
+        <salary>
+            "150000"
+        </salary>
+        <login>
+            "bejanyan"
+        </login>
+        <officelocation>
+            "AM04-12-AMD"
+        </officelocation>
+    </employee>
+</employees>
